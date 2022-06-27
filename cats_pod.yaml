@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: cats
+    owner: adriantrucios
+  name: cats
+spec:
+  containers:
+  - image: 490085956166.dkr.ecr.us-east-1.amazonaws.com/lab2:cats_image
+    name: cats
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always

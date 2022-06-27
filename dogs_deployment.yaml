@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-dogs
+  namespace: dogs
+  labels:
+    app: dogs
+    assignment: lab2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dogs
+      assignment: lab2
+  template:
+    metadata:
+      labels:
+        app: dogs
+        assignment: lab2
+    spec:
+      containers:
+      - name: dogs
+        image: dogs
+        ports:
+        - containerPort: 30001
